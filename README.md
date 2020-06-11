@@ -1,8 +1,4 @@
-# google-drive-ftp-adapter-online
 
-Connect your FTP Client to Google Drive with this Online Webservice.
-
-![alt tag](/docs/google-drive-ftp-adapter-online-logo.png)
 
 # News
 
@@ -19,18 +15,18 @@ Please don't use the public service until new advice.
 
 This application has been deployed as a public online service on Internet
 
-https://ftpdrive.andresoviedo.org/
+https://ftpdrive.luisf3908.org/
 
 
 # Getting started
 
-1. Register to https://ftpdrive.andresoviedo.org/
+1. Register to https://ftpdrive.luis3908.org/
 2. Authorize access to google-drive
 3. Create an FTP user
-4. Open your FTP client and connect to host "ftpdrive.andresoviedo.org" and port "50000"
+4. Open your FTP client and connect to host "ftpdrive.luis3908.com.org" and port "50000"
 5. Enjoy :)
 
-You can replace *ftpdrive.andresoviedo.org* with your own domain.
+You can replace *ftpdrive.luis3908.org* with your own domain.
 
 
 # FTP / FTPs
@@ -47,7 +43,7 @@ Application is a SBA (built on top of Spring Boot)
 * Spring Boot
 * Apache Mina
 * Google Drive API v3
-* Google Drive FTP Adapter (https://github.com/andresoviedo/google-drive-ftp-adapter)
+* Google Drive FTP Adapter (https://github.com/luis3908/google-drive-ftp-adapter)
 * spring-session
 * spring-security
 * spring-data
@@ -76,16 +72,11 @@ If you want to contribute to improve the app, send me an email in order to coord
 This project is licensed under Apache License v2.  It means you can do whatever you want with the source code, while keeping this file and the authoring comments in the code. 
 
 
-# Donations
-
-[<img src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_donate_92x26.png">](https://www.paypal.me/andresoviedo)
-
-
 # Build
 
 In order to build it, just git clone the project and run:
 
-    git clone https://github.com/andresoviedo/google-drive-ftp-adapter-online
+    git clone https://github.com/luis3908/google-drive-ftp-adapter-online
     cd google-drive-ftp-adapter-online
     mvn spring-boot:run 
 
@@ -105,7 +96,7 @@ Steps to configure application to put in a production environment.
 
 The easiest way is to request it to https://letsencrypt.org/
 
-    openssl pkcs12 -export -in ftpdrive_andresoviedo_org.crt -inkey ftpdrive_andresoviedo_org.key  -name "ftpdrive" -out keystore.p12
+    openssl pkcs12 -export -in ftpdrive_luis3908_org.crt -inkey ftpdrive_luis3908_org.key  -name "ftpdrive" -out keystore.p12
 
 ### Configure https certificate (self signed certificate)
 
@@ -129,11 +120,11 @@ If you want to proxy your service and you are using Apache, you can add this to 
     		ProxyPreserveHost On
     
     		# Route all traffic to backend
-           	ProxyPass        "/" "https://localhost:8443/"
-            ProxyPassReverse "/" "https://localhost:8443/"
+           	ProxyPass        "/" "https://localhost:1821/"
+            ProxyPassReverse "/" "https://localhost:1821/"
     
     		# The name of this virtual host
-            ServerName ftpdrive.andresoviedo.org
+            ServerName ftpdrive.luis3908.org
     
     		# Custom log files
     		ErrorLog ${APACHE_LOG_DIR}/ftpdrive.error.log
@@ -151,8 +142,8 @@ If you want to proxy your service and you are using Apache, you can add this to 
     		#SSLProxyCheckPeerName off
     
     		# https certificates
-    		SSLCertificateFile      /etc/ssl/certs/ftpdrive_andresoviedo_org.crt
-            SSLCertificateKeyFile /etc/ssl/private/ftpdrive_andresoviedo_org.key
+    		SSLCertificateFile      /etc/ssl/certs/ftpdrive_luis3908_org.crt
+            SSLCertificateKeyFile /etc/ssl/private/ftpdrive_luis3908_org.key
             
     	</VirtualHost>
     
